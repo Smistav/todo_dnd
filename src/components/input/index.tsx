@@ -1,10 +1,15 @@
 import React from 'react'
 import s from './input.module.scss'
-
-const Input = ({ handleChange, handleSubmit, value, error }) => {
+interface InputProps {
+  handleChange(evt: React.ChangeEvent<HTMLInputElement>): void
+  handleSubmit(evt: React.SyntheticEvent<HTMLFormElement>): void
+  value: string
+  error: string
+}
+const Input: React.FC<InputProps> = ({ handleChange, handleSubmit, value, error }) => {
   return (
     <div className={s.input}>
-      <form type='submit' className={s.form} onSubmit={handleSubmit}>
+      <form className={s.form} onSubmit={handleSubmit}>
         <div className={s.inputBlock}>
           <input
             className={s.enter}

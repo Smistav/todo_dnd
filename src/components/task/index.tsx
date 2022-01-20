@@ -2,8 +2,14 @@ import React from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import s from './task.module.scss'
 import cn from 'classnames'
+import { TaskTypes } from '../../dataTypes/dataTypes'
+interface TaskProps {
+  task: TaskTypes
+  index: number
+  columnId: number
+}
 
-const Task = ({ task, index, columnId }) => {
+const Task: React.FC<TaskProps> = ({ task, index, columnId }) => {
   return (
     <Draggable draggableId={String(task.id)} index={index}>
       {(provided, snapshot) => (

@@ -2,8 +2,14 @@ import React from 'react'
 import Task from '../task'
 import s from './taskList.module.scss'
 import cn from 'classnames'
-
-const TaskList = ({ provided, snapshot, tasks, columnId }) => {
+import { TaskTypes } from '../../dataTypes/dataTypes'
+interface TaskListProps {
+  provided: any
+  snapshot: any
+  tasks: TaskTypes[]
+  columnId: number
+}
+const TaskList: React.FC<TaskListProps> = ({ provided, snapshot, tasks, columnId }) => {
   const classComponent = cn(s.component, {
     [s.active]: snapshot.isDraggingOver && columnId === 0,
     [s.active1]: snapshot.isDraggingOver && columnId === 1,

@@ -6,20 +6,22 @@ import Column from '../column'
 import initData from '../../initData'
 import { onDragEnd } from './part/onDragEnd'
 import Input from '../input'
+import { DataTypes } from '../../dataTypes/dataTypes'
+
 const App = () => {
-  const [data, setData] = useState(initData)
-  const [error, setError] = useState(null)
+  const [data, setData] = useState<DataTypes>(initData)
+  const [error, setError] = useState('')
   const [value, setValue] = useState('')
 
-  const handleChange = (evt) => {
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const value = evt.target.value
     setValue(value)
     if (value) {
-      setError(null)
+      setError('')
     }
   }
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (evt: React.SyntheticEvent<HTMLFormElement>) => {
+    evt.preventDefault()
     if (value) {
       const columns = data.columns
       columns[0].tasks.push({ id: Date.now(), content: value })

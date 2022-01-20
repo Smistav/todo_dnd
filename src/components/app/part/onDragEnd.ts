@@ -1,4 +1,10 @@
-export const onDragEnd = (data, setData, result) => {
+import { DataTypes, DropResult } from '../../../dataTypes/dataTypes'
+
+export const onDragEnd = (
+  data: DataTypes,
+  setData: React.Dispatch<React.SetStateAction<DataTypes>>,
+  result: DropResult,
+) => {
   const { destination, source, draggableId } = result
   if (!destination) {
     return
@@ -6,8 +12,8 @@ export const onDragEnd = (data, setData, result) => {
   if (destination.droppableId === source.droppableId && destination.index === source.index) {
     return
   }
-  const start = data.columns[source.droppableId]
-  const finish = data.columns[destination.droppableId]
+  const start = data.columns[+source.droppableId]
+  const finish = data.columns[+destination.droppableId]
   if (start === finish) {
     const newTasks = [...start.tasks]
     const taskIndex = start.tasks.findIndex((item) => item.id === +draggableId)
