@@ -1,27 +1,25 @@
 const initData = {
-  tasks: {
-    'task-1': { id: 'task-1', content: '123123123' },
-    'task-2': { id: 'task-2', content: '12323' },
-    'task-3': { id: 'task-3', content: '68979678' },
-    'task-4': { id: 'task-4', content: 'cvzxcvscvzx' },
-  },
-  columns: {
-    'column-1': {
-      id: 'column-1',
+  columns: [
+    {
+      id: 0,
       title: 'To do',
-      taskIds: ['task-1', 'task-2', 'task-3', 'task-4'],
+      tasks: [
+        { id: 0, content: '123123123' },
+        { id: 1, content: '12323' },
+        { id: 2, content: '68979678' },
+        { id: 3, content: 'cvzxcvscvzx' },
+      ],
     },
-    'column-2': {
-      id: 'column-2',
+    {
+      id: 1,
       title: 'In progress',
-      taskIds: [],
+      tasks: [],
     },
-    'column-3': {
-      id: 'column-3',
+    {
+      id: 2,
       title: 'Done',
-      taskIds: [],
+      tasks: [],
     },
-  },
-  columnOrder: ['column-1', 'column-2', 'column-3'],
+  ],
 }
 export default initData
