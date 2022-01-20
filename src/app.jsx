@@ -19,6 +19,7 @@ const App = () => {
     const newTaskIds = Array.from(column.taskIds)
     newTaskIds.splice(source.index, 1)
     newTaskIds.splice(destination.index, 0, draggableId)
+
     const newColumn = {
       ...column,
       taskIds: newTaskIds,
