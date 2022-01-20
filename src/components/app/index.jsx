@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
 import s from './app.module.scss'
 import '@atlaskit/css-reset'
-import Column from './column'
-import initData from './initData'
+import Column from '../column'
+import initData from '../../initData'
 
 const App = () => {
   const [data, setData] = useState(initData)

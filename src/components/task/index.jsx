@@ -1,25 +1,21 @@
 import React from 'react'
 import { Draggable } from 'react-beautiful-dnd'
-import styled from 'styled-components'
-const Container = styled.div`
-  border: 1px solid lightgrey;
-  border-radius: 2px;
-  padding: 8px;
-  margin-bottom: 8px;
-  background-color: ${(props) => (props.isDragging ? '#dbdada' : 'white')};
-`
+import s from './task.module.scss'
+import cn from 'classnames'
+
 const Task = ({ task, index }) => {
   return (
     <Draggable draggableId={task.id} index={index}>
       {(provided, snapshot) => (
-        <Container
+        <div
+          className={cn(s.component, { [s.active]: snapshot.isDragging })}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          isDragging={snapshot.isDragging}
+          // isDragging={snapshot.isDragging}
         >
           {task.content}
-        </Container>
+        </div>
       )}
     </Draggable>
   )
