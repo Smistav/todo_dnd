@@ -12,6 +12,7 @@ const Task = ({ task, index, columnId }) => {
             [s.active]: snapshot.isDragging && columnId === 0,
             [s.active1]: snapshot.isDragging && columnId === 1,
             [s.active2]: snapshot.isDragging && columnId === 2,
+            [s.active2under]: columnId === 2,
           })}
           {...provided.draggableProps}
           {...provided.dragHandleProps}

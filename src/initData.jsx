@@ -4,10 +4,10 @@ const initData = {
       id: 0,
       title: 'To do',
       tasks: [
-        { id: 0, content: '123123123' },
-        { id: 1, content: '12323' },
-        { id: 2, content: '68979678' },
-        { id: 3, content: 'cvzxcvscvzx' },
+        { id: 0, content: 'Починить чтонить' },
+        { id: 1, content: 'Сходить куданить' },
+        { id: 2, content: 'Поесть чтонить' },
+        { id: 3, content: 'Послать когонить' },
       ],
     },
     {
